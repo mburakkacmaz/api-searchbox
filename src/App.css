@@ -1,38 +1,64 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #93032e;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 50px;
+  color: #d6a88d;
+  font-family: "Bigelow Rules";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-box {
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 250px;
+  margin-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card-list {
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.card-username {
+  margin-bottom: 0px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #c69f89d3;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: transform 0.25s ease-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-container:hover {
+  transform: scale(1.02);
+}
+
+.status.offline {
+  color: red;
+}
+.status.online {
+  color: green;
 }
